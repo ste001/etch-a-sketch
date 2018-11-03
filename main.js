@@ -1,4 +1,4 @@
-createGrid(10);
+createGrid(4);
 initEventListeners();
 
 function createGrid(squares){

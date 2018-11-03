@@ -15,6 +15,17 @@
   	padding: 20px;
 }
 
-.item:hover{
-	background-color: black;
+#buttons{
+	display: inline-block;
+	margin-bottom: 100px;
+	vertical-align: middle;
+	padding-left: 150px;
+	padding-top: 150px;
+}
+
+button{
+	height: 50px;
+	display: block;
+	margin: 15px auto;
+	width: 100%;
 }

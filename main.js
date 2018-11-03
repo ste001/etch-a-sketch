@@ -24,4 +24,18 @@ function initEventListeners(){
 	items.forEach((item)=>{
 		item.addEventListener('mouseenter', changeItemColor);
 	});
+	
+	const reset = document.getElementById("reset");
+	reset.addEventListener('click', resetGrid);
+}
+
+function removeItemListeners(){
+}
+
+function resetGrid(){
+	const items = document.querySelectorAll(".item");
+	items.forEach((item)=>{
+		const style = item.style;
+		style.backgroundColor = "white";
+	});
 }

@@ -41,9 +41,7 @@ function removeGrid(){
 
 function changeItemColor(e){
 	const style = e.target.style;
-	if (style.backgroundColor === "white"){
-		style.backgroundColor = randomColor();
-	}
+	style.backgroundColor = randomColor(); 
 }
 
 function initEventListeners(){

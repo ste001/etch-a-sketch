@@ -41,7 +41,9 @@ function removeGrid(){
 
 function changeItemColor(e){
 	const style = e.target.style;
-	style.backgroundColor = "black";
+	if (style.backgroundColor === "white"){
+		style.backgroundColor = randomColor();
+	}
 }
 
 function initEventListeners(){
@@ -64,4 +66,12 @@ function removeItemListeners(){
 	items.forEach((item)=>{
 		item.removeEventListener('mouseenter', changeItemColor);
 	});
+}
+
+function randomColor(){
+	let red = Math.floor((Math.random() * 255) + 1);
+	let green = Math.floor((Math.random() * 255) + 1);
+	let blue = Math.floor((Math.random() * 255) + 1);
+	
+	return "rgb("+red+","+green+","+blue+")";
 }

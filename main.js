@@ -1,5 +1,10 @@
+// TODO
+// Le dimensioni della griglia devono restare fisse cambiando il numero di celle
+
+
 createGrid(4);
 initEventListeners();
+initButtons();
 
 function createGrid(squares){
 	const grid = document.querySelector('.grid-container');
@@ -14,6 +19,30 @@ function createGrid(squares){
 	}
 }
 
+function updateGrid(){
+	let dim = prompt("How many squares per side?");
+	removeItemListeners();
+	resetGrid();
+	removeGrid();
+	createGrid(dim);
+	initEventListeners();
+}
+
+function resetGrid(){
+	const items = document.querySelectorAll(".item");
+	items.forEach((item)=>{
+		const style = item.style;
+		style.backgroundColor = "white";
+	});
+}
+
+function removeGrid(){
+	const grid = document.querySelector('.grid-container');
+	while (grid.hasChildNodes()){
+		grid.removeChild(grid.firstChild);
+	}	
+}
+
 function changeItemColor(e){
 	const style = e.target.style;
 	style.backgroundColor = "black";
@@ -23,19 +52,20 @@ function initEventListeners(){
 	const items = document.querySelectorAll(".item");
 	items.forEach((item)=>{
 		item.addEventListener('mouseenter', changeItemColor);
-	});
-	
+	});		
+}
+
+function initButtons(){
 	const reset = document.getElementById("reset");
 	reset.addEventListener('click', resetGrid);
+	
+	const newGrid = document.getElementById("new-grid");
+	newGrid.addEventListener('click', updateGrid);
 }
 
 function removeItemListeners(){
-}
-
-function resetGrid(){
 	const items = document.querySelectorAll(".item");
 	items.forEach((item)=>{
-		const style = item.style;
-		style.backgroundColor = "white";
+		item.removeEventListener('mouseenter', changeItemColor);
 	});
 }

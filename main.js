@@ -1,7 +1,3 @@
-// TODO
-// Le dimensioni della griglia devono restare fisse cambiando il numero di celle
-
-
 createGrid(4);
 initEventListeners();
 initButtons();
